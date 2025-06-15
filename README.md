@@ -10,8 +10,7 @@ A personal portfolio website built using **React** for the frontend and **Node.j
 
 - **Frontend:** React, CSS
 - **Backend:** Node.js, Express
-- **Hosting:** Vercel (frontend), [your backend host]
-
+- **Hosting:** Vercel (frontend), Render(Backend)
 ---
 
 ## Features
