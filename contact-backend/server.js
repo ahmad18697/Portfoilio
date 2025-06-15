@@ -13,11 +13,7 @@ app.use(express.json());
 
 // Security Middleware
 app.use(helmet());
-app.use(cors({
-  origin: 'https://ahmadraza-ashy.vercel.app/'|| 'http://localhost:3000',
-  methods: ['POST'],
-  credentials: true
-}));
+app.use(cors());
 
 // Rate Limiting
 const limiter = rateLimit({
