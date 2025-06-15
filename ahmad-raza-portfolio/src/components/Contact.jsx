@@ -16,7 +16,7 @@ const Contact = () => {
     setStatus('submitting');
     
     try {
-      const response = await fetch('https://ahmadraza-ashy.vercel.app/api/contact', {
+      const response = await fetch('https://portfoilio-hvzi.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
