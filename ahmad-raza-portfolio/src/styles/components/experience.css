@@ -1,0 +1,306 @@
+/* Ultra-Modern Timeline Design */
+.experience-section {
+  background-color: #f9f9f9;
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  margin-bottom: 4rem;
+  text-align: center;
+  position: relative;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.title-decorator {
+  color: #3498db;
+  margin: 0 1rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.title-decorator:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.timeline-scroll {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+}
+
+.timeline-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  min-width: min-content;
+  padding: 0 5rem;
+}
+
+.timeline-card {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+}
+
+.timeline-connector {
+  position: relative;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.connector-line {
+  width: 3px;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    #3498db 20%, 
+    #3498db 80%, 
+    transparent 100%);
+  flex-grow: 1;
+  border-radius: 3px;
+}
+
+.connector-dot {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 4px solid #3498db;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(52, 152, 219, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.experience-card {
+  flex-grow: 1;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.experience-header {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  border-radius: 12px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.company-logo::after {
+  content: attr(data-initials);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.company-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.company-badge span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.tenure-badge {
+  background: #e8f4fc;
+  color: #3498db;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-block;
+  width: fit-content;
+}
+
+.responsibilities {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.responsibilities li {
+  display: flex;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  align-items: flex-start;
+}
+
+.responsibility-marker {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #3498db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.marker-inner {
+  width: 8px;
+  height: 8px;
+  background: #3498db;
+  border-radius: 50%;
+}
+
+.responsibilities p {
+  margin: 0;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+.skills-wheel {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: 2rem auto 0;
+}
+
+.skill-spoke {
+  position: absolute;
+  width: 2px;
+  top: 50%;
+  left: 50%;
+  transform-origin: top center;
+}
+
+.skill-tag {
+  position: absolute;
+  white-space: nowrap;
+  background: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transform: rotate(calc(-1 * var(--rotation))) translateX(10px);
+  border: 1px solid #e2e8f0;
+}
+
+.wheel-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: #3498db;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 5px rgba(52, 152, 219, 0.2);
+}
+
+@media (max-width: 992px) {
+  .timeline-track {
+    padding: 0 2rem;
+  }
+  
+  .experience-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .timeline-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .timeline-connector {
+    width: auto;
+    height: 60px;
+    flex-direction: row;
+    padding-top: 0;
+  }
+  
+  .connector-line {
+    width: 100%;
+    height: 3px;
+  }
+  
+  .connector-dot {
+    margin: 0 -10px;
+  }
+  
+  .experience-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .company-badge {
+    align-items: center;
+  }
+  
+  .skills-wheel {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .skill-tag {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .experience-card {
+    padding: 1.5rem;
+  }
+  
+  .responsibilities li {
+    padding: 0.6rem;
+  }
+}

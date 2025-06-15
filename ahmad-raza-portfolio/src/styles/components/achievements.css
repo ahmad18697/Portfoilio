@@ -1,0 +1,416 @@
+/* Achievements Section - Modern Glass Morphism with Subtle Motion */
+.achievements-section {
+  padding: 6rem 0;
+  background-color: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievements-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(52, 152, 219, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 70% 70%, rgba(231, 76, 60, 0.05) 0%, transparent 20%);
+  animation: float 15s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-5%, 5%); }
+  100% { transform: translate(5%, -5%); }
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 2.8rem;
+  color: #2c3e50;
+  position: relative;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2c3e50);
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Floating Cards with Depth Effect */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.achievement-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transform: translateZ(0);
+}
+
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2c3e50);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.12),
+    0 0 0 2px rgba(52, 152, 219, 0.1) inset;
+}
+
+.achievement-card:hover::before {
+  opacity: 1;
+}
+
+/* Animated Icon with Floating Effect */
+.card-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.2));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: #3498db;
+  font-size: 1.8rem;
+  transition: all 0.5s ease;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
+}
+
+.achievement-card:hover .card-icon {
+  transform: translateY(-5px) scale(1.1);
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(41, 128, 185, 0.3));
+  animation: float-icon 3s infinite ease-in-out;
+}
+
+@keyframes float-icon {
+  0%, 100% { transform: translateY(-5px) scale(1.1); }
+  50% { transform: translateY(-10px) scale(1.1); }
+}
+
+.achievement-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #2c3e50;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.achievement-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3498db;
+  transition: width 0.3s ease;
+}
+
+.achievement-card:hover h3::after {
+  width: 100%;
+}
+
+.achievement-card p {
+  color: #7f8c8d;
+  margin-bottom: 1.8rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  transition: color 0.3s ease;
+}
+
+.achievement-card:hover p {
+  color: #5d6d7e;
+}
+
+/* Glowing Rank Badge with Pulse Effect */
+.rank-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+}
+
+.rank-badge::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: rotate(30deg) translate(-30%, -30%); }
+  100% { transform: rotate(30deg) translate(30%, 30%); }
+}
+
+.achievement-card:hover .rank-badge {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+}
+
+/* Hackathons Section with Timeline Effect */
+.hackathons-section {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hackathons-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40px;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    #3498db 20%, 
+    #3498db 80%, 
+    transparent 100%);
+  opacity: 0.2;
+}
+
+.hackathons-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  position: relative;
+  font-weight: 600;
+}
+
+.hackathons-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #3498db;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.hackathons-list {
+  list-style: none;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hackathon-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.2rem 0 1.2rem 2rem;
+  border-bottom: 1px solid rgba(238, 238, 238, 0.8);
+  position: relative;
+}
+
+.hackathon-item::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #3498db;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
+  z-index: 1;
+}
+
+.hackathon-item:last-child {
+  border-bottom: none;
+}
+
+.position-badge {
+  background: #2c3e50;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  min-width: 90px;
+  text-align: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.position-badge.winner {
+  background: linear-gradient(135deg, #f39c12, #e74c3c);
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
+}
+
+.hackathon-item:hover .position-badge {
+  transform: scale(1.05);
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.event-name {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.hackathon-item:hover .event-name {
+  color: #3498db;
+}
+
+.event-link {
+  color: #3498db;
+  font-size: 0.85rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.event-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #3498db;
+  transition: width 0.3s ease;
+}
+
+.event-link:hover {
+  color: #2980b9;
+}
+
+.event-link:hover::after {
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .achievements-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+  }
+  
+  .achievement-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .hackathons-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .hackathons-section::before {
+    left: 20px;
+  }
+
+  .hackathon-item {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .hackathon-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding-left: 2rem;
+  }
+  
+  .position-badge {
+    align-self: flex-start;
+  }
+
+  .event-details {
+    width: 100%;
+  }
+}

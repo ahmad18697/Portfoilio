@@ -1,0 +1,210 @@
+/* Next-Level Certifications Design */
+.certifications-section {
+  background-color: white;
+  padding: 6rem 0;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  margin-bottom: 4rem;
+  text-align: center;
+  position: relative;
+  font-weight: 700;
+}
+
+.title-highlight {
+  color: #3498db;
+  position: relative;
+}
+
+.title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: rgba(52, 152, 219, 0.2);
+  z-index: -1;
+  transform: skew(-15deg);
+}
+
+.title-decoration {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2c3e50);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.2);
+}
+
+.certifications-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  perspective: 1000px;
+}
+
+.certification-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transform-style: preserve-3d;
+}
+
+.certification-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.certification-ribbon::before,
+.certification-ribbon::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  border-width: 0 40px 40px 0;
+  border-style: solid;
+  border-color: transparent #3498db transparent transparent;
+}
+
+.certification-ribbon::after {
+  border-color: transparent #2c3e50 transparent transparent;
+  right: -40px;
+}
+
+.certification-header {
+  padding: 2rem 2rem 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background: linear-gradient(135deg, #f8fafc, #ffffff);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.certification-badge {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.certification-header h3 {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+}
+
+.issuer {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.certification-body {
+  padding: 1.5rem 2rem;
+}
+
+.certification-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.certification-items li {
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  position: relative;
+  padding-left: 2rem;
+  transition: all 0.3s ease;
+}
+
+.item-marker {
+  position: absolute;
+  left: 0.8rem;
+  top: 1.1rem;
+  width: 8px;
+  height: 8px;
+  background: #3498db;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.certification-footer {
+  padding: 0 2rem 2rem;
+  text-align: center;
+}
+
+.verify-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+}
+
+.verify-btn i {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 992px) {
+  .certifications-display {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .certification-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .certification-badge {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .certifications-section {
+    padding: 4rem 0;
+  }
+  
+  .certifications-display {
+    grid-template-columns: 1fr;
+  }
+}
