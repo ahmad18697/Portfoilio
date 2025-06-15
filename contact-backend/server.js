@@ -14,7 +14,7 @@ app.use(express.json());
 // Security Middleware
 app.use(helmet());
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: 'https://ahmadraza-ashy.vercel.app/'|| 'http://localhost:3000',
   methods: ['POST'],
   credentials: true
 }));
