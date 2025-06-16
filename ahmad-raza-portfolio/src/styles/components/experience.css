@@ -1,4 +1,4 @@
-/* Ultra-Modern Timeline Design */
+/* Ultra-Modern Timeline Design - Complete Responsive Solution */
 .experience-section {
   background-color: #f9f9f9;
   padding: 6rem 0;
@@ -42,6 +42,7 @@
   width: 100%;
   overflow-x: auto;
   padding-bottom: 2rem;
+  -webkit-overflow-scrolling: touch;
 }
 
 .timeline-track {
@@ -99,6 +100,7 @@
   padding: 2.5rem;
   border: 1px solid rgba(0, 0, 0, 0.03);
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .experience-header {
@@ -115,15 +117,6 @@
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
-}
-
-.company-logo::after {
-  content: attr(data-initials);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,6 +160,12 @@
   border-radius: 8px;
   margin-bottom: 0.8rem;
   align-items: flex-start;
+  background: rgba(241, 245, 249, 0.5);
+  transition: background 0.2s ease;
+}
+
+.responsibilities li:hover {
+  background: rgba(226, 232, 240, 0.7);
 }
 
 .responsibility-marker {
@@ -207,6 +206,8 @@
   top: 50%;
   left: 50%;
   transform-origin: top center;
+  height: 100px;
+  background: rgba(52, 152, 219, 0.1);
 }
 
 .skill-tag {
@@ -220,6 +221,14 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transform: rotate(calc(-1 * var(--rotation))) translateX(10px);
   border: 1px solid #e2e8f0;
+  cursor: default;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background: #3498db;
+  color: white;
+  transform: rotate(calc(-1 * var(--rotation))) translateX(10px) scale(1.05);
 }
 
 .wheel-center {
@@ -234,55 +243,163 @@
   box-shadow: 0 0 0 5px rgba(52, 152, 219, 0.2);
 }
 
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
 @media (max-width: 992px) {
   .timeline-track {
-    padding: 0 2rem;
+    padding: 0 3rem;
+    gap: 3.5rem;
   }
   
   .experience-card {
-    padding: 2rem;
+    padding: 2.2rem;
+  }
+  
+  .company-logo {
+    width: 55px;
+    height: 55px;
   }
 }
 
 @media (max-width: 768px) {
   .section-title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
+    margin-bottom: 3.5rem;
   }
   
   .timeline-card {
     flex-direction: column;
     align-items: center;
+    max-width: 600px;
   }
   
   .timeline-connector {
-    width: auto;
+    width: 100%;
     height: 60px;
     flex-direction: row;
     padding-top: 0;
+    justify-content: center;
   }
   
   .connector-line {
-    width: 100%;
+    width: 80%;
     height: 3px;
   }
   
   .connector-dot {
-    margin: 0 -10px;
+    margin: 0 -12px;
+  }
+  
+  .experience-header {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .skills-wheel {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .experience-section {
+    padding: 4rem 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .timeline-track {
+    padding: 0 1rem;
+    gap: 3rem;
+  }
+  
+  .experience-card {
+    padding: 2rem;
+    border-radius: 14px;
   }
   
   .experience-header {
     flex-direction: column;
-    align-items: center;
     text-align: center;
+    gap: 1rem;
   }
   
   .company-badge {
     align-items: center;
   }
   
+  .responsibilities li {
+    padding: 0.7rem;
+  }
+  
   .skills-wheel {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* Special 324.8×472 Viewport Optimization */
+@media (max-width: 472px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .timeline-card {
+    width: 100%;
+    max-width: 324.8px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .experience-card {
+    padding: 1.8rem 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .company-logo {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+  
+  .company-badge span {
+    font-size: 1.1rem;
+  }
+  
+  .responsibilities {
+    margin-bottom: 1.5rem;
+  }
+  
+  .responsibilities li {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.7rem;
+  }
+  
+  .responsibility-marker {
+    margin-top: 0;
+    align-self: center;
+  }
+  
+  .skills-wheel {
+    width: 140px;
+    height: 140px;
+    margin-top: 1.5rem;
   }
   
   .skill-tag {
@@ -291,16 +408,22 @@
   }
 }
 
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 2rem;
+/* Landscape Orientation Adjustments */
+@media (max-width: 472px) and (orientation: landscape) {
+  .experience-section {
+    padding: 3rem 0;
   }
   
-  .experience-card {
-    padding: 1.5rem;
+  .timeline-card {
+    max-width: 400px;
   }
   
-  .responsibilities li {
-    padding: 0.6rem;
+  .experience-header {
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .company-badge {
+    align-items: flex-start;
   }
 }
