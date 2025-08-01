@@ -13,7 +13,7 @@ export const projects = [
   "MongoDB",
   "Mongoose",
   "JWT (Authentication)"
-]
+],
     liveUrl:"",
     codeUrl: "https://github.com/ahmad18697/Job-Portal"
   },
